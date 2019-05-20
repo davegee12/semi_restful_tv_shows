@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'semi_restful_tv_shows_app/css/style.css'%}">
+    <title>Document</title>
+</head>
+
+<body class="container-fluid">
+    <div class="container">
+        <div class="col">
+            <h1 class="inline">TV Show {{ this_show.id }}</h1><a class="inline" href="/shows">Home</a>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">Title: {{ this_show.title }}</div>
+        <div class="w-100"></div>
+        <div class="col">Network: {{ this_show.network }}</div>
+        <div class="w-100"></div>
+        <div class="col">Release Date: {{ this_show.release_date }}</div>
+        <div class="w-100"></div>
+        <div class="col">Description: {{ this_show.desc }}</div>
+        <div class="w-100"></div>
+        <div class="col">Last Updated: {{ this_show.updated_at }}</div>
+        <div class="w-100"></div>
+    </div>
+    <a href="/shows/{{this_show.id}}/edit">Edit</a> |
+    <a href="/shows/{{this_show.id}}/destroy">Delete</a>
+</body>
+
+</html>
